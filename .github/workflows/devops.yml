@@ -6,12 +6,48 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:
-  build:    
-    name: github-actions-CI-CD    
-    runs-on: ubuntu-latest
+jobs: 
+  test:      
+    runs-on: ubuntu-latest  
+
     steps:      
       - uses: actions/checkout@v2      
       - name: Run tests
         working-directory: ./web
-        run: docker build . --file Dockerfile -t flask        
+        run: docker build . --file Dockerfile -t flask:latest
+
+  deploy:
+      needs: test
+
+      runs-on: ubuntu-latest      
+
+      steps:
+        - name: Build
+          working-directory: ./web
+          run: docker build . --file Dockerfile --tag flask
+        
+        - name: Login to Docker hub
+          working-directory: ./web
+          run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+        - name: Deploy
+          working-directory: ./web
+          run: |
+            IMAGE_ID={{ github.repository }}
+
+            # Strip git ref prefix from version
+            VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+            # Strip "v" prefix from tag name
+            [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+
+            # Use Docker `latest` tag convention
+            [ "$VERSION" == "master" ] && VERSION=latest
+
+            echo IMAGE_ID=$IMAGE_ID
+            echo VERSION=$VERSION
+
+            docker tag flask $IMAGE_ID:$VERSION
+            docker push $IMAGE_ID:$VERSION
+
+
