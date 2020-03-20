@@ -11,6 +11,6 @@ jobs:
     name: github-actions-CI-CD    
     runs-on: ubuntu-latest
     steps:      
-      - name: Build the Docker image
       - uses: actions/checkout@v2      
+      - name: Build the Docker image
         run: docker build . --file Dockerfile --tag flask:$(date +%s)        
