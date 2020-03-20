@@ -1,0 +1,16 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:    
+    name: github-actions-CI-CD    
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Build the Docker image
+      - uses: actions/checkout@v2      
+        run: docker build . --file Dockerfile --tag flask:$(date +%s)        
