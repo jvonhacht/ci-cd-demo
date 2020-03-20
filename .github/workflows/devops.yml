@@ -22,6 +22,7 @@ jobs:
       runs-on: ubuntu-latest      
 
       steps:
+        - uses: actions/checkout@v2 
         - name: Build
           working-directory: ./web
           run: docker build . --file Dockerfile --tag flask
