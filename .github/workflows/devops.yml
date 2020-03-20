@@ -17,4 +17,4 @@ jobs:
         run: docker build . --file Dockerfile --tag flask:$(date +%s)        
       - name: Run tests
         working-directory: ./web
-        run: pytest tests/
+        run: docker exec -d flask pytest tests/      
