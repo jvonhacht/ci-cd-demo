@@ -7,6 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world!</h1>    
+    <h1>Corona Clicker</h1>    
+
+    <div id="gameContainer">   
+        <div id="cash">$0</div> 
+        <button type="button">Click me!</button> 
+        <div class="shop container">
+            <div class=shopItem>
+                <div class="itemName">Toilet paper factory</div>
+                <div>Number: </div><div id=numberToilet>$0</div>
+                <div>Price: </div><div id=priceToilet>$50</div>
+                <button type="button">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Hand sanitiser factory</div>
+                <div>Number: </div><div id=numberSanitiser>$0</div>
+                <div>Price: </div><div id=priceSanitiser>$500</div>
+                <button type="button">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Mask factory</div>
+                <div>Number: </div><div id=numberMask>$0</div>
+                <div>Price: </div><div id=priceMask>$5000</div>
+                <button type="button">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Research vaccine</div>
+                <div>Price: </div><div id=priceVaccine>$50000</div>
+                <button type="button">Buy</button> 
+            </div>
+        </div>                
+        <div id="container">
+            <img src="{{ url_for('static', filename='img/duck.png') }}" id="duck">
+        </div>
+    </div>
 </body>
 </html>
