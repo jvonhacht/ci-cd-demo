@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+    <script src="{{ url_for('static', filename='javascript/game.js') }}"></script>
+</head>
+<body>
+    <h1>Corona Clicker</h1>    
+
+    <div id="gameContainer">   
+        <div id="cash">0</div> 
+        <button type="button" onclick="increaseCash()">Click me!</button> 
+        <div class="shop container">
+            <div class=shopItem>
+                <div class="itemName">Toilet paper factory</div>
+                <div>Number: </div><div id=numberToilet>0</div>
+                <div>Price: </div><div id=priceToilet>$50</div>
+                <button type="button" onclick="buy('toilet')">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Mask factory</div>
+                <div>Number: </div><div id=numberMask>0</div>
+                <div>Price: </div><div id=priceMask>$500</div>
+                <button type="button" onclick="buy('mask')">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Hand sanitiser factory</div>
+                <div>Number: </div><div id=numberSanitiser>0</div>
+                <div>Price: </div><div id=priceSanitiser>$5000</div>
+                <button type="button" onclick="buy('sanitiser')">Buy</button> 
+            </div>
+            <div class=shopItem>
+                <div class="itemName">Research vaccine</div>
+                <div>Price: </div><div id=priceVaccine>$50000</div>
+                <button type="button" onclick="buy('vaccine')">Buy</button> 
+            </div>
+        </div>                
+        <div id="container">
+            <img src="{{ url_for('static', filename='img/duck.png') }}" id="duck">
+        </div>
+    </div>
+</body>
+</html>
