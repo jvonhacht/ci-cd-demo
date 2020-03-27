@@ -1,4 +1,4 @@
-var cash = 50000;
+var cash = 0;
 var factoryToiletPaper = 0;
 var factoryMask = 0;
 var factorySanitiser = 0;
