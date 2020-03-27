@@ -12,8 +12,8 @@ class Virus {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.v_x = randomNumber(-5, 5);
-        this.v_y = randomNumber(-5, 5);
+        this.v_x = randomNumber(-3, 3)*3;
+        this.v_y = randomNumber(-3, 3)*3;
     }
 }
 
