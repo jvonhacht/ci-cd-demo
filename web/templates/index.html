@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Document</title>
+    <title>Corona Clicker</title>
     <script src="{{ url_for('static', filename='javascript/game.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Corona Clicker</h1>    
-
+<body onload="init()">    
     <div id="gameContainer">   
-        <div id="cash">0</div> 
-        <button type="button" onclick="increaseCash()">Click me!</button> 
-        <div class="shop container">
-            <div class=shopItem>
-                <div class="itemName">Toilet paper factory</div>
-                <div>Number: </div><div id=numberToilet>0</div>
-                <div>Price: </div><div id=priceToilet>$50</div>
-                <button type="button" onclick="buy('toilet')">Buy</button> 
-            </div>
-            <div class=shopItem>
-                <div class="itemName">Mask factory</div>
-                <div>Number: </div><div id=numberMask>0</div>
-                <div>Price: </div><div id=priceMask>$500</div>
-                <button type="button" onclick="buy('mask')">Buy</button> 
-            </div>
-            <div class=shopItem>
-                <div class="itemName">Hand sanitiser factory</div>
-                <div>Number: </div><div id=numberSanitiser>0</div>
-                <div>Price: </div><div id=priceSanitiser>$5000</div>
-                <button type="button" onclick="buy('sanitiser')">Buy</button> 
-            </div>
-            <div class=shopItem>
-                <div class="itemName">Research vaccine</div>
-                <div>Price: </div><div id=priceVaccine>$50000</div>
-                <button type="button" onclick="buy('vaccine')">Buy</button> 
-            </div>
-        </div>                
-        <div id="container">
-            <img src="{{ url_for('static', filename='img/duck.png') }}" id="duck">
+        <h1>Corona Clicker</h1>
+        <div class="text-button">
+            <div id="dollar">$</div> 
+            <div id="cash">0</div> 
+            <button id="cashButton" type="button" onclick="increaseCash()">Make money!</button> 
         </div>
+        <table class="shop">
+            <tbody>
+                <tr class=shopItem>
+                    <td class="itemName">Toilet paper factory</td>
+                    <td>Number </div><div id=numberToilet>0</td>
+                    <td>Price </div><div id=priceToilet>$50.00</td>
+                    <td><button type="button" onclick="buy('toilet')">Buy</button> </td>
+                </tr>
+                <tr class=shopItem>
+                    <td class="itemName">Mask factory</td>
+                    <td>Number </div><div id=numberMask>0</td>
+                    <td>Price </div><div id=priceMask>$500.00</td>
+                    <td><button type="button" onclick="buy('mask')">Buy</button> </td>
+                </tr>
+                <tr class=shopItem>
+                    <td class="itemName">Hand sanitiser factory</td>
+                    <td>Number </div><div id=numberSanitiser>0</td>
+                    <td>Price </div><div id=priceSanitiser>$5,000.00</td>
+                    <td><button type="button" onclick="buy('sanitiser')">Buy</button> </td>
+                </tr>
+                <tr class=shopItem>
+                    <td class="itemName">Research vaccine</td>
+                    <td>Price </div><div id=priceVaccine>$50,000.00</td>
+                    <td></td>
+                    <td><button type="button" onclick="buy('vaccine')">Buy</button> </td>
+                </tr>
+            </tbody>
+        </table>                
     </div>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <img src="{{ url_for('static', filename='img/coronaduck.png') }}" id="duck">
 </body>
 </html>
