@@ -1,4 +1,6 @@
 import pytest
 
-def test_mytest():
-    assert True
+tasteful = True
+
+def test_tastefulness():
+    assert tasteful
