@@ -14,3 +14,7 @@ To setup the workflow the following secret variables have to be added:
 - **SSH_KEY**, ssh key to server.
 
 Lastly, inside devops.yml you have to edit the docker hub pull and push location.
+
+# Group Members
+johvh
+davidjo2
