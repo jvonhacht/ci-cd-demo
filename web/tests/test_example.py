@@ -1,6 +1,6 @@
 import pytest
 
-tasteful = True
+important_variable = True
 
-def test_tastefulness():
-    assert tasteful
+def test_important_stuff():
+    assert important_variable
