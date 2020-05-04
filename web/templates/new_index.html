@@ -8,7 +8,9 @@
     <script src="{{ url_for('static', filename='javascript/game.js') }}"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>    
+<body onload="init()">    
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <img src="{{ url_for('static', filename='img/meadow.jpg') }}" id="meadow">
     <img src="{{ url_for('static', filename='img/duck.png') }}" id="duck">
 </body>
 </html>
