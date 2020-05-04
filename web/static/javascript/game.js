@@ -38,24 +38,12 @@ function init() {
 var fps = 30;
 function loop() {
     setTimeout(function() {
-        // write code
-        if (researchedVaccine) {
-            virusList = [];
-            document.getElementById("duck").src = "/static/img/duck.png"
-            alert("You won, the world is saved!");
-        } else {
-            requestAnimationFrame(loop); 
-        }                 
-        
-        cash += factoryToiletPaper * 5 / fps
-        cash += factoryMask * 50 / fps
-        cash += factorySanitiser * 100 / fps
-        document.getElementById("cash").innerHTML = Math.round(cash * 100) / 100;
+        requestAnimationFrame(loop); 
 
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         var img = new Image();
-        img.src = "/static/img/corona.png"
+        img.src = "/static/img/flower.png"
         
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (i = 0; i < virusList.length; i++) {

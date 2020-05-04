@@ -61,7 +61,7 @@ td {
     height: 500px;
     bottom: 0px;
     right: 0px;
-    z-index: -2;
+    z-index: 5;
 }
 
 .text-button {
@@ -104,8 +104,12 @@ button:active {
 }
 
 canvas {
-    z-index: -1;
+    z-index: 6;
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+#meadow {
+    height: 100%;
 }
