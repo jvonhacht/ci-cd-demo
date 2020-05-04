@@ -2,5 +2,5 @@ import pytest
 
 important_variable = True
 
-def important_test():
+def test_important_stuff():
     assert important_variable
